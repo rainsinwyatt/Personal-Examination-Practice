@@ -1,0 +1,201 @@
+/* ============================================================
+   layout.css —— 顶栏 / 页面容器 / 栅格 / 面包屑
+   ============================================================ */
+
+/* ---------- 顶栏 ---------- */
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  height: 58px;
+  padding: 0 24px;
+  background: rgba(11, 14, 19, 0.82);
+  border-bottom: 1px solid var(--line);
+  backdrop-filter: saturate(140%) blur(12px);
+}
+
+.topbar__brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+}
+
+.topbar__mark {
+  display: grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 7px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #0b0e13;
+  background: var(--accent);
+}
+
+.topbar__sub {
+  color: var(--text-3);
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.topbar__nav {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-left: 12px;
+}
+
+.topbar__link {
+  padding: 6px 10px;
+  border-radius: 7px;
+  font-size: 13.5px;
+  color: var(--text-2);
+  transition: background 0.15s, color 0.15s;
+}
+.topbar__link:hover { color: var(--text); background: var(--bg-hover); }
+.topbar__link.is-active { color: var(--text); background: var(--bg-elev-2); }
+
+.topbar__right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-left: auto;
+}
+
+.topbar__user {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--text-2);
+}
+
+.avatar {
+  display: grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--accent);
+  background: var(--accent-weak);
+  border: 1px solid var(--accent-line);
+}
+
+/* ---------- 页面容器 ---------- */
+.page {
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 28px 24px 72px;
+  animation: fade-up 0.24s ease both;
+}
+
+.page--wide { max-width: 1280px; }
+
+.page-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 22px;
+}
+
+.page-head__title { display: flex; flex-direction: column; gap: 6px; }
+.page-head__title h1 { font-size: 24px; }
+.page-head__title p { color: var(--text-2); font-size: 13.5px; }
+
+/* ---------- 面包屑 ---------- */
+.crumb {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+  font-size: 13px;
+  color: var(--text-3);
+}
+.crumb a { color: var(--text-2); transition: color 0.15s; }
+.crumb a:hover { color: var(--accent); }
+.crumb__sep { color: var(--text-3); opacity: 0.6; }
+.crumb__current { color: var(--text); }
+
+/* ---------- 栅格 ---------- */
+.grid { display: grid; gap: 14px; }
+.grid--2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.grid--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.grid--4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+
+.stack { display: flex; flex-direction: column; }
+.row { display: flex; align-items: center; }
+
+.gap-6  { gap: 6px; }
+.gap-8  { gap: 8px; }
+.gap-10 { gap: 10px; }
+.gap-12 { gap: 12px; }
+.gap-16 { gap: 16px; }
+.gap-20 { gap: 20px; }
+
+.mt-8  { margin-top: 8px; }
+.mt-12 { margin-top: 12px; }
+.mt-16 { margin-top: 16px; }
+.mt-20 { margin-top: 20px; }
+.mt-28 { margin-top: 28px; }
+.mb-8  { margin-bottom: 8px; }
+.mb-12 { margin-bottom: 12px; }
+.mb-16 { margin-bottom: 16px; }
+
+/* ---------- 刷题页双栏 ---------- */
+.split {
+  display: grid;
+  grid-template-columns: 248px minmax(0, 1fr);
+  gap: 18px;
+  align-items: start;
+}
+
+.sticky-side { position: sticky; top: 74px; }
+
+/* ---------- 响应式 ---------- */
+@media (max-width: 1024px) {
+  .grid--4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .split { grid-template-columns: 200px minmax(0, 1fr); }
+}
+
+@media (max-width: 900px) {
+  /* 平板宽度：学科入口收进首页，保留主导航 */
+  .topbar__link--subject { display: none; }
+}
+
+@media (max-width: 768px) {
+  .topbar { padding: 0 14px; gap: 10px; }
+  .topbar__sub { display: none; }
+  .topbar__nav { gap: 2px; margin-left: 4px; }
+  .topbar__link { padding: 6px 8px; font-size: 13px; }
+  .page { padding: 20px 14px 56px; }
+  .grid--2,
+  .grid--3,
+  .grid--4 { grid-template-columns: minmax(0, 1fr); }
+  .split { grid-template-columns: minmax(0, 1fr); }
+  .sticky-side { position: static; }
+}
+
+@media (max-width: 600px) {
+  .topbar__brand-name, .topbar__user { display: none; }
+  .topbar__right { gap: 4px; }
+  .topbar { gap: 6px; padding: 0 10px; }
+  .topbar__name { display: none; }
+  .topbar__user { gap: 0; }
+}
+
+.backup-menu { position: relative; }
+.backup-menu summary { list-style: none; }
+.backup-menu summary::-webkit-details-marker { display:none; }
+.backup-menu__items { position:absolute; top:100%; right:0; display:flex; flex-direction:column; min-width:160px; padding:8px; background:var(--bg-elev); border:1px solid var(--line); border-radius:8px; z-index:60; }
