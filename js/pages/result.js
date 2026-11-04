@@ -163,6 +163,9 @@ window.KY = window.KY || {};
           const kpName = Data.kpName(question.bankId, question.kpId);
           const mine = KY.Grader.displayAnswer(question, item.answer);
           const correct = KY.Grader.displayCorrect(question);
+          const revisionNotice = question.contentRevision && item.contentRevision !== question.contentRevision
+            ? '<p class="dim mt-8">此题已完成内容复核，以下展示现行题目。历史作答与得分保留；题干或选项可能与作答时版本不同，建议重新练习。</p>'
+            : '';
 
           const shortExtra =
             question.type === 'short'
@@ -187,6 +190,7 @@ window.KY = window.KY || {};
 
               <div class="review__stem">${U.text(question.stem)}</div>
 
+              ${revisionNotice}
               <div class="review__answers">
                 <div class="answer-box ${item.status === 'correct' ? 'answer-box--ok' : 'answer-box--bad'}">
                   <div class="answer-box__label">你的答案</div>

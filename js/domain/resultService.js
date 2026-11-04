@@ -107,6 +107,7 @@ window.KY = window.KY || {};
 
         items.push({
           questionId: question.id,
+          contentRevision: question.contentRevision || null,
           type: question.type,
           bankId: question.bankId,
           chapterId: question.chapterId,
@@ -212,6 +213,7 @@ window.KY = window.KY || {};
             const existing = list[index];
             existing.attempts = (existing.attempts || 1) + 1;
             existing.lastAnswer = item.answer;
+            existing.contentRevision = question.contentRevision || null;
             existing.lastAt = now;
             existing.mastered = false;
             delete existing.masteredAt;
@@ -223,6 +225,7 @@ window.KY = window.KY || {};
               chapterId: question.chapterId,
               kpId: question.kpId,
               lastAnswer: item.answer,
+              contentRevision: question.contentRevision || null,
               attempts: 1,
               firstAt: now,
               lastAt: now,

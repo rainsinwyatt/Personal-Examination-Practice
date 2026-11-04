@@ -7,11 +7,11 @@
 <meta name="color-scheme" content="dark">
 <title>高校教师资格证 · 刷题系统</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%235b9dff'/%3E%3Ctext x='16' y='22' font-size='17' font-family='PingFang SC,sans-serif' text-anchor='middle' fill='%230b0e13'%3E师%3C/text%3E%3C/svg%3E">
-<link rel="stylesheet" href="css/base.css">
-<link rel="stylesheet" href="css/layout.css">
-<link rel="stylesheet" href="css/components.css">
-<link rel="stylesheet" href="css/pages.css">
-<link rel="stylesheet" href="css/refresh.css">
+<link rel="stylesheet" href="css/base.css?v=20261104-content1">
+<link rel="stylesheet" href="css/layout.css?v=20261104-content1">
+<link rel="stylesheet" href="css/components.css?v=20261104-content1">
+<link rel="stylesheet" href="css/pages.css?v=20261104-content1">
+<link rel="stylesheet" href="css/refresh.css?v=20261104-content1">
 </head>
 <body>
   <!-- 应用根节点：所有页面由 js/pages 下的页面类渲染到这里 -->
@@ -23,61 +23,62 @@
   <div id="modal-root"></div>
 
   <!-- 数据层：先定义录入格式，再挂题库，最后构建索引 -->
-  <script src="data/schema.js"></script>
-  <script src="data/subjects.js"></script>
-  <script src="data/ped-reviewed.js"></script>
-  <script src="data/ped-supplement.js"></script>
-  <script src="data/psy-reviewed.js"></script>
-  <script src="data/law.js"></script>
-  <script src="data/law-drill.js"></script>
-  <script src="data/ethics.js"></script>
-  <script src="data/eth-drill.js"></script>
-  <script src="data/authored.js"></script>
-  <script src="data/authored-next.js"></script>
-  <script src="data/law-balanced.js"></script>
-  <script src="data/law-reviewed.js"></script>
-  <script src="data/law-supplement.js"></script>
-  <script src="data/eth-balanced.js"></script>
-  <script src="data/eth-reviewed.js"></script>
-  <script src="data/eth-supplement.js"></script>
-  <script src="data/eth-final.js"></script>
-  <script src="data/ped-final.js"></script>
-  <script src="data/law-final.js"></script>
-  <script src="data/exam-format.js"></script>
-  <script src="data/index.js"></script>
+  <script src="data/schema.js?v=20261104-content1"></script>
+  <script src="data/subjects.js?v=20261104-content1"></script>
+  <script src="data/ped-reviewed.js?v=20261104-content1"></script>
+  <script src="data/ped-supplement.js?v=20261104-content1"></script>
+  <script src="data/psy-reviewed.js?v=20261104-content1"></script>
+  <script src="data/law.js?v=20261104-content1"></script>
+  <script src="data/law-drill.js?v=20261104-content1"></script>
+  <script src="data/ethics.js?v=20261104-content1"></script>
+  <script src="data/eth-drill.js?v=20261104-content1"></script>
+  <script src="data/authored.js?v=20261104-content1"></script>
+  <script src="data/authored-next.js?v=20261104-content1"></script>
+  <script src="data/law-balanced.js?v=20261104-content1"></script>
+  <script src="data/law-reviewed.js?v=20261104-content1"></script>
+  <script src="data/law-supplement.js?v=20261104-content1"></script>
+  <script src="data/eth-balanced.js?v=20261104-content1"></script>
+  <script src="data/eth-reviewed.js?v=20261104-content1"></script>
+  <script src="data/eth-supplement.js?v=20261104-content1"></script>
+  <script src="data/eth-final.js?v=20261104-content1"></script>
+  <script src="data/ped-final.js?v=20261104-content1"></script>
+  <script src="data/law-final.js?v=20261104-content1"></script>
+  <script src="data/choice-content-reviewed.js?v=20261104-content1"></script>
+  <script src="data/exam-format.js?v=20261104-content1"></script>
+  <script src="data/index.js?v=20261104-content1"></script>
 
   <!-- 核心层：工具 → 存储 → 认证 → 路由 -->
-  <script src="js/core/utils.js"></script>
-  <script src="js/core/store.js"></script>
-  <script src="js/core/auth.js"></script>
-  <script src="js/core/router.js"></script>
+  <script src="js/core/utils.js?v=20261104-content1"></script>
+  <script src="js/core/store.js?v=20261104-content1"></script>
+  <script src="js/core/auth.js?v=20261104-content1"></script>
+  <script src="js/core/router.js?v=20261104-content1"></script>
 
   <!-- 领域层：查询 / 判分 / 会话 / 结果统计 -->
-  <script src="js/domain/questionService.js"></script>
-  <script src="js/domain/grader.js"></script>
-  <script src="js/domain/sessionService.js"></script>
-  <script src="js/domain/paperService.js"></script>
-  <script src="js/domain/resultService.js"></script>
-  <script src="js/domain/backupService.js"></script>
+  <script src="js/domain/questionService.js?v=20261104-content1"></script>
+  <script src="js/domain/grader.js?v=20261104-content1"></script>
+  <script src="js/domain/sessionService.js?v=20261104-content1"></script>
+  <script src="js/domain/paperService.js?v=20261104-content1"></script>
+  <script src="js/domain/resultService.js?v=20261104-content1"></script>
+  <script src="js/domain/backupService.js?v=20261104-content1"></script>
 
   <!-- 通用组件 -->
-  <script src="js/components/toast.js"></script>
-  <script src="js/components/modal.js"></script>
-  <script src="js/components/layout.js"></script>
-  <script src="js/components/carousel.js"></script>
+  <script src="js/components/toast.js?v=20261104-content1"></script>
+  <script src="js/components/modal.js?v=20261104-content1"></script>
+  <script src="js/components/layout.js?v=20261104-content1"></script>
+  <script src="js/components/carousel.js?v=20261104-content1"></script>
 
   <!-- 页面控制器 -->
-  <script src="js/pages/login.js"></script>
-  <script src="js/pages/home.js"></script>
-  <script src="js/pages/bankList.js"></script>
-  <script src="js/pages/questionList.js"></script>
-  <script src="js/pages/practice.js"></script>
-  <script src="js/pages/examHome.js"></script>
-  <script src="js/pages/examPaper.js"></script>
-  <script src="js/pages/wrongbook.js"></script>
-  <script src="js/pages/result.js"></script>
+  <script src="js/pages/login.js?v=20261104-content1"></script>
+  <script src="js/pages/home.js?v=20261104-content1"></script>
+  <script src="js/pages/bankList.js?v=20261104-content1"></script>
+  <script src="js/pages/questionList.js?v=20261104-content1"></script>
+  <script src="js/pages/practice.js?v=20261104-content1"></script>
+  <script src="js/pages/examHome.js?v=20261104-content1"></script>
+  <script src="js/pages/examPaper.js?v=20261104-content1"></script>
+  <script src="js/pages/wrongbook.js?v=20261104-content1"></script>
+  <script src="js/pages/result.js?v=20261104-content1"></script>
 
   <!-- 启动 -->
-  <script src="js/main.js"></script>
+  <script src="js/main.js?v=20261104-content1"></script>
 </body>
 </html>

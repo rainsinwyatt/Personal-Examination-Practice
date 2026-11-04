@@ -280,6 +280,7 @@ window.KY = window.KY || {};
           const q=item.question;
           return `<article><h2>${i+1}. ${U.esc(q.stem)}</h2><p>${U.esc(item.subject.name)} · ${U.esc(item.kpName)}</p>`+
             (q.options||[]).map(o=>`<p>${U.esc(o.key)}. ${U.esc(o.text)}</p>`).join('')+
+            (q.contentRevision && item.contentRevision !== q.contentRevision ? '<p>此题已完成内容复核；原作答可能基于旧版题目，请重新练习。</p>' : '')+
             `<p><b>原作答：</b>${U.text(KY.Grader.displayAnswer(q,item.lastAnswer))}</p><p><b>参考答案：</b>${U.text(KY.Grader.displayCorrect(q))}</p>`+
             (q.explanation?`<p><b>解析：</b>${U.text(q.explanation)}</p>`:'')+'</article>';
         }).join('');
